@@ -1,0 +1,961 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>91次元浏览器-二次元聚合浏览工具_多站点入口与资源导航</title>
+<meta name="description" content="91次元浏览器是面向二次元爱好者的聚合浏览与资源导航工具，本文介绍91次元浏览器的多站点入口、动漫番剧资源聚合、漫画小说分区、使用体验与常见问题，帮助新用户快速了解91次元浏览器的功能定位与浏览顺序。">
+<meta name="keywords" content="91次元浏览器,91次元浏览器入口,二次元聚合浏览器,动漫资源导航,番剧浏览工具">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23221a4a'/%3E%3Ccircle cx='32' cy='30' r='14' fill='none' stroke='%23ff8ad4' stroke-width='4'/%3E%3Ccircle cx='32' cy='30' r='5' fill='%2388e6ff'/%3E%3Crect x='20' y='48' width='24' height='4' rx='2' fill='%23ff8ad4'/%3E%3C/svg%3E">
+<style>
+:root{
+--bg:#f6f4ff;
+--bg2:#ffffff;
+--ink:#1d1936;
+--ink2:#4b4670;
+--muted:#7a7599;
+--line:#e6e1f7;
+--brand:#6a4cff;
+--brand2:#ff6fc0;
+--accent:#22c8e0;
+--soft:#efeaff;
+--radius:16px;
+--shadow:0 6px 22px rgba(88,64,180,.10);
+--shadow2:0 10px 30px rgba(88,64,180,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+margin:0;
+font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+background:var(--bg);
+color:var(--ink);
+font-size:15.5px;
+line-height:1.75;
+-webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 18px}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+p{margin:0}
+section{scroll-margin-top:78px}
+
+/* ===== 导航 ===== */
+.cy-nav{
+position:sticky;top:0;z-index:50;
+background:rgba(255,255,255,.92);
+backdrop-filter:blur(10px);
+border-bottom:1px solid var(--line);
+}
+.cy-nav-in{
+max-width:1200px;margin:0 auto;padding:10px 18px;
+display:flex;align-items:center;gap:18px;
+}
+.cy-logo{
+display:flex;align-items:center;gap:9px;
+font-weight:800;font-size:17px;letter-spacing:.3px;
+white-space:nowrap;
+}
+.cy-logo .mark{
+width:32px;height:32px;border-radius:10px;
+background:linear-gradient(135deg,var(--brand),var(--brand2));
+display:flex;align-items:center;justify-content:center;
+color:#fff;font-size:15px;font-weight:800;
+box-shadow:0 4px 12px rgba(106,76,255,.35);
+}
+.cy-logo em{font-style:normal;color:var(--brand)}
+.cy-menu{
+display:flex;gap:4px;flex:1;overflow-x:auto;
+scrollbar-width:none;
+}
+.cy-menu::-webkit-scrollbar{display:none}
+.cy-menu a{
+padding:7px 12px;border-radius:999px;
+font-size:14px;color:var(--ink2);
+white-space:nowrap;transition:.2s;
+}
+.cy-menu a:hover{background:var(--soft);color:var(--brand)}
+.cy-nav .cta{
+padding:8px 16px;border-radius:999px;
+background:linear-gradient(135deg,var(--brand),var(--brand2));
+color:#fff;font-size:13.5px;font-weight:600;
+white-space:nowrap;
+}
+@media(max-width:760px){
+.cy-menu{display:none}
+.cy-nav .cta{margin-left:auto}
+}
+
+/* ===== Banner ===== */
+.cy-hero{
+position:relative;overflow:hidden;
+padding:52px 0 46px;
+background:
+radial-gradient(700px 320px at 12% 0%,rgba(106,76,255,.16),transparent 70%),
+radial-gradient(600px 300px at 88% 20%,rgba(255,111,192,.18),transparent 70%),
+linear-gradient(180deg,#ffffff,#f6f4ff);
+border-bottom:1px solid var(--line);
+}
+.cy-hero::before{
+content:"";position:absolute;inset:0;
+background-image:radial-gradient(rgba(106,76,255,.10) 1px,transparent 1px);
+background-size:22px 22px;
+opacity:.5;pointer-events:none;
+}
+.cy-hero-in{position:relative;display:grid;grid-template-columns:1.35fr .9fr;gap:38px;align-items:center}
+.cy-badge{
+display:inline-flex;align-items:center;gap:6px;
+padding:5px 12px;border-radius:999px;
+background:var(--soft);color:var(--brand);
+font-size:12.5px;font-weight:600;margin-bottom:16px;
+}
+.cy-hero h1{
+font-size:34px;letter-spacing:-.5px;margin-bottom:14px;
+}
+.cy-hero h1 span{
+background:linear-gradient(120deg,var(--brand),var(--brand2));
+-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.cy-hero .lead{color:var(--ink2);font-size:15.5px;margin-bottom:8px}
+.cy-hero .lead2{color:var(--muted);font-size:14px;margin-bottom:22px}
+.cy-search{
+display:flex;gap:8px;background:#fff;border:1px solid var(--line);
+border-radius:14px;padding:7px;box-shadow:var(--shadow);max-width:520px;
+}
+.cy-search input{
+flex:1;border:0;outline:0;background:transparent;
+padding:9px 12px;font-size:14.5px;color:var(--ink);font-family:inherit;
+}
+.cy-search button{
+border:0;cursor:pointer;padding:9px 20px;border-radius:10px;
+background:linear-gradient(135deg,var(--brand),var(--brand2));
+color:#fff;font-size:14px;font-weight:600;font-family:inherit;
+transition:.2s;
+}
+.cy-search button:hover{filter:brightness(1.06)}
+.cy-quick{
+display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;
+}
+.cy-quick a{
+padding:7px 14px;border-radius:999px;font-size:13px;
+background:#fff;border:1px solid var(--line);color:var(--ink2);
+transition:.2s;
+}
+.cy-quick a:hover{border-color:var(--brand);color:var(--brand);transform:translateY(-1px)}
+.cy-hero-card{
+background:#fff;border-radius:20px;padding:20px;
+border:1px solid var(--line);box-shadow:var(--shadow2);
+}
+.cy-hero-card h3{font-size:15px;margin-bottom:12px;color:var(--ink)}
+.cy-hero-card ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.cy-hero-card li{
+display:flex;align-items:center;gap:10px;
+font-size:13.5px;color:var(--ink2);
+}
+.cy-dot{width:7px;height:7px;border-radius:50%;background:var(--brand2);flex:none}
+.cy-hero-card .tagline{
+margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);
+font-size:12.5px;color:var(--muted);
+}
+@media(max-width:880px){
+.cy-hero-in{grid-template-columns:1fr}
+.cy-hero h1{font-size:26px}
+.cy-hero{padding:36px 0 32px}
+}
+
+/* ===== 通用区块 ===== */
+.sec{padding:44px 0}
+.sec-head{
+display:flex;align-items:flex-end;justify-content:space-between;
+gap:16px;margin-bottom:22px;flex-wrap:wrap;
+}
+.sec-head h2{font-size:22px;letter-spacing:-.3px}
+.sec-head h2 .bar{
+display:inline-block;width:5px;height:20px;border-radius:4px;
+background:linear-gradient(180deg,var(--brand),var(--brand2));
+vertical-align:-3px;margin-right:10px;
+}
+.sec-head p{color:var(--muted);font-size:13.5px}
+.sec-head .more{font-size:13px;color:var(--brand);font-weight:600}
+
+/* ===== 简介 ===== */
+.cy-intro{
+background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+padding:28px 30px;box-shadow:var(--shadow);
+}
+.cy-intro h2{font-size:21px;margin-bottom:14px}
+.cy-intro p{color:var(--ink2);margin-bottom:13px;font-size:15px}
+.cy-intro p:last-child{margin-bottom:0}
+.cy-intro strong{color:var(--brand);font-weight:700}
+.cy-intro-grid{
+display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px;
+}
+.cy-mini{
+background:var(--soft);border-radius:12px;padding:14px;
+}
+.cy-mini b{display:block;font-size:18px;color:var(--brand);margin-bottom:2px}
+.cy-mini span{font-size:12.5px;color:var(--ink2)}
+@media(max-width:760px){.cy-intro-grid{grid-template-columns:repeat(2,1fr)}.cy-intro{padding:20px}}
+
+/* ===== 卡片网格 ===== */
+.cy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:980px){.cy-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.cy-grid{grid-template-columns:1fr}}
+.cy-card{
+background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+overflow:hidden;box-shadow:var(--shadow);transition:.24s;
+display:flex;flex-direction:column;
+}
+.cy-card:hover{transform:translateY(-4px);box-shadow:var(--shadow2);border-color:#d9d0ff}
+.cy-cover{
+height:118px;position:relative;
+display:flex;align-items:flex-end;padding:12px;
+}
+.cy-cover span{
+font-size:11.5px;color:#fff;background:rgba(0,0,0,.28);
+padding:3px 9px;border-radius:999px;backdrop-filter:blur(4px);
+}
+.cv1{background:linear-gradient(135deg,#6a4cff,#ff6fc0)}
+.cv2{background:linear-gradient(135deg,#22c8e0,#6a4cff)}
+.cv3{background:linear-gradient(135deg,#ff8a4c,#ff6fc0)}
+.cv4{background:linear-gradient(135deg,#3a2c7a,#22c8e0)}
+.cv5{background:linear-gradient(135deg,#ff6fc0,#ffb84c)}
+.cv6{background:linear-gradient(135deg,#4c8cff,#8a5cff)}
+.cv7{background:linear-gradient(135deg,#1f8f7a,#22c8e0)}
+.cv8{background:linear-gradient(135deg,#7a4cff,#4c8cff)}
+.cv9{background:linear-gradient(135deg,#c04cff,#ff6fc0)}
+.cy-card-body{padding:15px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.cy-card-body h3{font-size:15.5px}
+.cy-tags{display:flex;flex-wrap:wrap;gap:6px}
+.cy-tags i{
+font-style:normal;font-size:11.5px;padding:2px 9px;border-radius:999px;
+background:var(--soft);color:var(--brand);
+}
+.cy-tags i.g{background:#e3faf5;color:#128b73}
+.cy-card-body .desc{font-size:13.5px;color:var(--ink2);flex:1}
+.cy-meta{
+display:flex;justify-content:space-between;align-items:center;
+font-size:12px;color:var(--muted);border-top:1px dashed var(--line);padding-top:9px;
+}
+.cy-meta b{color:var(--brand2);font-weight:700}
+
+/* ===== 更新列表 ===== */
+.cy-updates{
+display:grid;grid-template-columns:repeat(2,1fr);gap:12px;
+}
+@media(max-width:760px){.cy-updates{grid-template-columns:1fr}}
+.cy-up{
+display:flex;gap:12px;align-items:flex-start;
+background:#fff;border:1px solid var(--line);border-radius:12px;
+padding:13px 15px;transition:.2s;
+}
+.cy-up:hover{border-color:var(--brand);transform:translateX(2px)}
+.cy-up .t{
+font-size:11.5px;color:var(--brand);background:var(--soft);
+padding:2px 8px;border-radius:6px;white-space:nowrap;font-weight:600;
+}
+.cy-up .txt{flex:1}
+.cy-up .txt b{font-size:14px;display:block;margin-bottom:2px}
+.cy-up .txt span{font-size:12.5px;color:var(--muted)}
+
+/* ===== 分类入口 ===== */
+.cy-cats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:880px){.cy-cats{grid-template-columns:repeat(2,1fr)}}
+.cy-cat{
+background:linear-gradient(160deg,#fff,#f8f6ff);
+border:1px solid var(--line);border-radius:14px;
+padding:18px 16px;transition:.22s;
+}
+.cy-cat:hover{transform:translateY(-3px);border-color:#d3c8ff;box-shadow:var(--shadow)}
+.cy-cat b{font-size:15px;display:block;margin-bottom:5px}
+.cy-cat span{font-size:12.5px;color:var(--muted);display:block;line-height:1.6}
+.cy-cat em{
+font-style:normal;display:inline-block;margin-top:10px;
+font-size:12px;color:var(--brand);font-weight:600;
+}
+
+/* ===== 深度正文 ===== */
+.cy-article{
+background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+padding:32px 34px;box-shadow:var(--shadow);
+}
+.cy-article h2{font-size:22px;margin-bottom:16px}
+.cy-article h3{font-size:16.5px;margin:22px 0 10px;color:var(--brand)}
+.cy-article p{color:var(--ink2);margin-bottom:13px;font-size:15px}
+.cy-article p:last-child{margin-bottom:0}
+.cy-article .quote{
+border-left:3px solid var(--brand2);background:var(--soft);
+padding:12px 16px;border-radius:0 10px 10px 0;
+font-size:14px;color:var(--ink2);margin:16px 0;
+}
+@media(max-width:760px){.cy-article{padding:22px 20px}}
+
+/* ===== 体验指南 ===== */
+.cy-guide{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:880px){.cy-guide{grid-template-columns:1fr}}
+.cy-guide-item{
+background:#fff;border:1px solid var(--line);border-radius:14px;
+padding:20px;box-shadow:var(--shadow);
+}
+.cy-guide-item .num{
+width:34px;height:34px;border-radius:10px;
+background:linear-gradient(135deg,var(--brand),var(--brand2));
+color:#fff;font-weight:800;font-size:15px;
+display:flex;align-items:center;justify-content:center;
+margin-bottom:12px;
+}
+.cy-guide-item h3{font-size:15.5px;margin-bottom:8px}
+.cy-guide-item p{font-size:13.5px;color:var(--ink2)}
+
+/* ===== FAQ ===== */
+.cy-faq{display:grid;gap:12px}
+.cy-faq details{
+background:#fff;border:1px solid var(--line);border-radius:12px;
+padding:0 18px;box-shadow:var(--shadow);overflow:hidden;
+}
+.cy-faq summary{
+cursor:pointer;padding:15px 0;font-weight:600;font-size:15px;
+list-style:none;display:flex;justify-content:space-between;gap:12px;
+}
+.cy-faq summary::-webkit-details-marker{display:none}
+.cy-faq summary::after{
+content:"+";color:var(--brand);font-weight:700;font-size:18px;line-height:1;
+}
+.cy-faq details[open] summary::after{content:"−"}
+.cy-faq .ans{
+padding:0 0 16px;font-size:14px;color:var(--ink2);
+border-top:1px dashed var(--line);padding-top:13px;
+}
+
+/* ===== 评论 ===== */
+.cy-comments{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:820px){.cy-comments{grid-template-columns:1fr}}
+.cy-comment{
+background:#fff;border:1px solid var(--line);border-radius:12px;
+padding:15px 16px;transition:.2s;
+}
+.cy-comment:hover{border-color:#d9d0ff}
+.cy-comment .top{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+.cy-avatar{
+width:30px;height:30px;border-radius:50%;flex:none;
+display:flex;align-items:center;justify-content:center;
+color:#fff;font-size:13px;font-weight:700;
+}
+.cy-comment .top b{font-size:13.5px}
+.cy-comment .top span{margin-left:auto;font-size:11.5px;color:var(--muted)}
+.cy-comment p{font-size:13.5px;color:var(--ink2)}
+
+/* ===== 资讯 ===== */
+.cy-news{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:880px){.cy-news{grid-template-columns:1fr}}
+.cy-news-item{
+background:#fff;border:1px solid var(--line);border-radius:14px;
+padding:18px;box-shadow:var(--shadow);transition:.22s;
+}
+.cy-news-item:hover{transform:translateY(-3px);box-shadow:var(--shadow2)}
+.cy-news-item time{font-size:12px;color:var(--brand);font-weight:600}
+.cy-news-item h3{font-size:15px;margin:8px 0 7px}
+.cy-news-item p{font-size:13px;color:var(--muted)}
+
+/* ===== 订阅 ===== */
+.cy-sub{
+background:linear-gradient(135deg,#221a4a,#3a2c7a);
+border-radius:20px;padding:34px;color:#fff;
+display:flex;align-items:center;justify-content:space-between;gap:24px;
+flex-wrap:wrap;
+}
+.cy-sub h2{font-size:22px;margin-bottom:8px}
+.cy-sub p{color:#cfc8f5;font-size:14px}
+.cy-sub .box{
+display:flex;gap:8px;background:rgba(255,255,255,.12);
+border-radius:12px;padding:6px;
+}
+.cy-sub input{
+border:0;outline:0;background:transparent;color:#fff;
+padding:9px 14px;font-size:14px;font-family:inherit;min-width:200px;
+}
+.cy-sub input::placeholder{color:#b3aaee}
+.cy-sub button{
+border:0;cursor:pointer;border-radius:9px;padding:9px 20px;
+background:linear-gradient(135deg,#ff6fc0,#ffb84c);
+color:#fff;font-weight:700;font-size:14px;font-family:inherit;
+}
+
+/* ===== 页脚 ===== */
+.cy-footer{
+background:#1a1533;color:#b9b2e0;padding:42px 0 26px;margin-top:20px;
+}
+.cy-footer-grid{
+display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:26px;
+padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.1);
+}
+@media(max-width:820px){.cy-footer-grid{grid-template-columns:1fr 1fr}}
+.cy-footer h4{color:#fff;font-size:14.5px;margin-bottom:12px}
+.cy-footer p{font-size:13px;line-height:1.8;color:#9d95cc}
+.cy-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.cy-footer ul a{font-size:13px;color:#9d95cc;transition:.2s}
+.cy-footer ul a:hover{color:#fff}
+.cy-copy{
+padding-top:20px;font-size:12.5px;color:#7f78b0;
+display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 导航 -->
+<header class="cy-nav">
+<div class="cy-nav-in">
+<a class="cy-logo" href="/#top">
+<span class="mark">91</span>
+<span>91次元<em>浏览器</em></span>
+</a>
+<nav class="cy-menu">
+<a href="/#hot">热门推荐</a>
+<a href="/#update">最新动态</a>
+<a href="/#cats">分类入口</a>
+<a href="/#deep">深度解析</a>
+<a href="/#guide">体验指南</a>
+<a href="/#faq">常见问题</a>
+<a href="/#comments">用户评论</a>
+<a href="/#news">相关资讯</a>
+</nav>
+<a class="cta" href="/#hot">开始浏览</a>
+</div>
+</header>
+
+<main id="top">
+
+<!-- 首屏 -->
+<section class="cy-hero">
+<div class="wrap cy-hero-in">
+<div>
+<span class="cy-badge">◆ 二次元聚合浏览 · 多站点入口导航</span>
+<h1>91次元浏览器：一站式<span>二次元资源聚合</span>浏览入口</h1>
+<p class="lead">聚合番剧、漫画、轻小说与同人社区的多站点入口，91次元浏览器把分散的二次元内容收进一个清爽的浏览框架里。</p>
+<p class="lead2">支持分类筛选、更新追踪与收藏入口整理，适合追番党、漫画读者和刚入门的新用户按自己的节奏浏览。</p>
+<form class="cy-search" onsubmit="return false">
+<input type="text" placeholder="搜索番剧名、漫画分区、站点入口关键词…" aria-label="站内搜索">
+<button type="submit">搜索</button>
+</form>
+<div class="cy-quick">
+<a href="/#hot">本季番剧</a>
+<a href="/#cats">漫画分区</a>
+<a href="/#update">更新追踪</a>
+<a href="/#deep">功能解析</a>
+<a href="/#guide">新手指南</a>
+<a href="/#faq">常见问题</a>
+<a href="/#news">圈内资讯</a>
+<a href="/#comments">读者短评</a>
+</div>
+</div>
+<div class="cy-hero-card">
+<h3>今日浏览热度速览</h3>
+<ul>
+<li><span class="cy-dot"></span>番剧聚合入口 · 更新稳定</li>
+<li><span class="cy-dot"></span>漫画分区 · 按题材快速定位</li>
+<li><span class="cy-dot"></span>轻小说书单 · 长线阅读友好</li>
+<li><span class="cy-dot"></span>同人社区 · 讨论氛围活跃</li>
+<li><span class="cy-dot"></span>收藏夹整理 · 跨设备同步思路</li>
+</ul>
+<div class="tagline">页面仅作功能与资源导航说明，具体内容以各站点实际提供为准。</div>
+</div>
+</div>
+</section>
+
+<!-- 简介 -->
+<section class="sec" id="about">
+<div class="wrap">
+<div class="cy-intro">
+<h2>91次元浏览器是什么：面向二次元内容消费的聚合浏览工具</h2>
+<p>很多二次元爱好者的日常浏览路径其实很固定：早上看看本季番剧更新到第几集，中午翻翻追更中的漫画有没有新话，晚上再去社区看看别人的讨论和推荐。问题在于，这些内容往往散落在不同站点、不同分区、不同收藏夹里，来回切换既费时间也容易漏更。<strong>91次元浏览器</strong>要解决的就是这类“内容分散、入口难找、更新难追”的问题，它把常见的二次元内容入口整理进一个统一的浏览框架，让追更这件事变得更顺手。</p>
+<p>从定位上看，91次元浏览器更接近“聚合浏览与资源导航”工具，而不是单一的内容平台。它不生产内容，而是把番剧、漫画、轻小说、同人社区等方向的入口按题材、更新状态、受众偏好做了分类整理。对新用户来说，这降低了寻找入口的门槛；对老用户来说，它可以当作一个固定的浏览起点，减少在多个站点之间反复搜索的时间成本。</p>
+<p>本页面围绕91次元浏览器的功能定位、分类逻辑、浏览顺序、体验细节和常见疑问展开，适合三类读者：刚接触二次元内容、不知道该从哪个入口开始的新用户；已经有固定追更习惯、想整理浏览路径的老用户；以及想了解这类聚合浏览器到底能做什么的观望者。页面中的分类说明、体验指南和常见问题都可以作为收藏参考。</p>
+<p>值得一提的是，聚合浏览工具的价值不在于“内容最多”，而在于“路径清晰”。91次元浏览器把入口、分类和更新提示放在同一个阅读动线里，用户可以按题材找、按更新时间找，也可以按社区热度找。这种多入口并行的设计，比单一列表更容易形成稳定的浏览习惯，也更容易让人愿意把它加入书签反复打开。</p>
+<div class="cy-intro-grid">
+<div class="cy-mini"><b>8+</b><span>内容方向分类</span></div>
+<div class="cy-mini"><b>多站点</b><span>入口聚合整理</span></div>
+<div class="cy-mini"><b>更新追踪</b><span>减少漏更焦虑</span></div>
+<div class="cy-mini"><b>移动优先</b><span>手机浏览友好</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 热门推荐 -->
+<section class="sec" id="hot">
+<div class="wrap">
+<div class="sec-head">
+<h2><span class="bar"></span>热门内容推荐：二次元入口精选</h2>
+<p>按题材与热度整理的浏览入口，适合作为首次打开91次元浏览器时的起点</p>
+</div>
+<div class="cy-grid">
+
+<article class="cy-card">
+<div class="cy-cover cv1"><span>番剧 · 奇幻</span></div>
+<div class="cy-card-body">
+<h3>异世界冒险番 · 本季更新中</h3>
+<div class="cy-tags"><i>奇幻</i><i class="g">更新稳定</i><i>轻改</i></div>
+<p class="desc">典型异世界开局，节奏偏慢热，前三集铺垫较多，适合喜欢世界观展开的观众，追更时建议一次看两集。</p>
+<div class="cy-meta"><span>热度 9.6</span><b>第 9 话已更</b></div>
+</div>
+</article>
+
+<article class="cy-card">
+<div class="cy-cover cv2"><span>漫画 · 日常</span></div>
+<div class="cy-card-body">
+<h3>治愈系日常漫画分区</h3>
+<div class="cy-tags"><i>日常</i><i>治愈</i><i class="g">短篇友好</i></div>
+<p class="desc">单元剧结构，随时看随时停，适合碎片时间。这一分区的新作往往画风柔和，剧情压力小，睡前阅读体验不错。</p>
+<div class="cy-meta"><span>热度 9.2</span><b>本周更新 3 话</b></div>
+</div>
+</article>
+
+<article class="cy-card">
+<div class="cy-cover cv3"><span>番剧 · 热血</span></div>
+<div class="cy-card-body">
+<h3>热血战斗番 · 高潮章节</h3>
+<div class="cy-tags"><i>热血</i><i>战斗</i><i class="g">高能</i></div>
+<p class="desc">打斗作画有亮点，剧情进入主线冲突，适合喜欢连续追看的观众。建议从第一话按顺序看，避免跳过铺垫。</p>
+<div class="cy-meta"><span>热度 9.8</span><b>第 12 话已更</b></div>
+</div>
+</article>
+
+<article class="cy-card">
+<div class="cy-cover cv4"><span>轻小说 · 悬疑</span></div>
+<div class="cy-card-body">
+<h3>悬疑推理轻小说书单</h3>
+<div class="cy-tags"><i>悬疑</i><i>推理</i><i class="g">长线阅读</i></div>
+<p class="desc">以章节反转见长，适合喜欢边读边推理的读者。书单按系列整理，建议先看第一卷再决定是否追完整系列。</p>
+<div class="cy-meta"><span>热度 8.9</span><b>第三卷更新</b></div>
+</div>
+</article>
+
+<article class="cy-card">
+<div class="cy-cover cv5"><span>社区 · 同人</span></div>
+<div class="cy-card-body">
+<h3>同人创作讨论区入口</h3>
+<div class="cy-tags"><i>同人</i><i>讨论</i><i class="g">活跃</i></div>
+<p class="desc">以作品二创和角色讨论为主，氛围偏轻松。适合看完正篇后想找延伸内容的读者，注意遵守各社区规则。</p>
+<div class="cy-meta"><span>热度 9.0</span><b>日帖 200+</b></div>
+</div>
+</article>
+
+<article class="cy-card">
+<div class="cy-cover cv6"><span>番剧 · 校园</span></div>
+<div class="cy-card-body">
+<h3>校园恋爱番 · 口碑回温</h3>
+<div class="cy-tags"><i>校园</i><i>恋爱</i><i class="g">轻松</i></div>
+<p class="desc">前期评价一般，中段情感线展开后口碑回升。适合喜欢慢热感情线的观众，建议看到第 5 话再下结论。</p>
+<div class="cy-meta"><span>热度 8.7</span><b>第 8 话已更</b></div>
+</div>
+</article>
+
+<article class="cy-card">
+<div class="cy-cover cv7"><span>漫画 · 科幻</span></div>
+<div class="cy-card-body">
+<h3>科幻设定系漫画合集</h3>
+<div class="cy-tags"><i>科幻</i><i>设定流</i><i class="g">硬核</i></div>
+<p class="desc">重视世界观与设定细节，阅读时需要留意旁白信息。适合喜欢推敲逻辑的读者，不建议跳读。</p>
+<div class="cy-meta"><span>热度 8.8</span><b>半月更新</b></div>
+</div>
+</article>
+
+<article class="cy-card">
+<div class="cy-cover cv8"><span>专题 · 补番</span></div>
+<div class="cy-card-body">
+<h3>经典补番顺序指南</h3>
+<div class="cy-tags"><i>补番</i><i>经典</i><i class="g">新手友好</i></div>
+<p class="desc">按年代与类型梳理的补番路线，帮助新用户建立基本认知。建议先挑两三部代表作，再扩展到自己感兴趣的分支。</p>
+<div class="cy-meta"><span>热度 9.1</span><b>持续更新</b></div>
+</div>
+</article>
+
+<article class="cy-card">
+<div class="cy-cover cv9"><span>声优 · 资讯</span></div>
+<div class="cy-card-body">
+<h3>声优动态与作品关联</h3>
+<div class="cy-tags"><i>声优</i><i>资讯</i><i class="g">轻阅读</i></div>
+<p class="desc">整理声优参与作品与近期动态，适合想按声优选番的观众。作为浏览补充内容阅读体验更佳。</p>
+<div class="cy-meta"><span>热度 8.5</span><b>近期更新</b></div>
+</div>
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- 最新动态 -->
+<section class="sec" id="update">
+<div class="wrap">
+<div class="sec-head">
+<h2><span class="bar"></span>最新更新与热门动态</h2>
+<p>2026年11月7日 更新汇总，按入口类型整理</p>
+</div>
+<div class="cy-updates">
+
+<div class="cy-up"><span class="t">番剧</span><div class="txt"><b>异世界冒险番 第9话上线</b><span>本话进入新地图篇章，节奏比前两话快，适合集中补看。</span></div></div>
+<div class="cy-up"><span class="t">漫画</span><div class="txt"><b>治愈系日常漫画 本周3话更新</b><span>短篇单元结构，单话阅读时长约 6 分钟。</span></div></div>
+<div class="cy-up"><span class="t">轻小说</span><div class="txt"><b>悬疑推理系列 第三卷发布</b><span>延续前作伏笔，建议按顺序阅读避免剧透。</span></div></div>
+<div class="cy-up"><span class="t">社区</span><div class="txt"><b>同人讨论区开启本周话题</b><span>围绕角色塑造展开，参与前建议先看社区规则。</span></div></div>
+<div class="cy-up"><span class="t">番剧</span><div class="txt"><b>热血战斗番 第12话高潮章节</b><span>打斗作画集中，建议使用大屏设备观看。</span></div></div>
+<div class="cy-up"><span class="t">专题</span><div class="txt"><b>补番顺序指南新增年代分支</b><span>补充了 2000 年代代表作推荐，适合新手参考。</span></div></div>
+<div class="cy-up"><span class="t">漫画</span><div class="txt"><b>科幻设定系漫画 半月更新提醒</b><span>本作更新频率较低，建议加入收藏避免漏更。</span></div></div>
+<div class="cy-up"><span class="t">资讯</span><div class="txt"><b>声优作品关联条目整理完成</b><span>新增按声优选番的索引方式，方便横向浏览。</span></div></div>
+<div class="cy-up"><span class="t">番剧</span><div class="txt"><b>校园恋爱番 第8话口碑回温</b><span>情感线展开后讨论度上升，中期评价明显好转。</span></div></div>
+<div class="cy-up"><span class="t">工具</span><div class="txt"><b>91次元浏览器入口分类页优化</b><span>分类层级更清晰，移动端点击区域加大。</span></div></div>
+
+</div>
+</div>
+</section>
+
+<!-- 分类入口 -->
+<section class="sec" id="cats">
+<div class="wrap">
+<div class="sec-head">
+<h2><span class="bar"></span>内容分类入口</h2>
+<p>按题材与内容形态划分，方便快速定位想看的类型</p>
+</div>
+<div class="cy-cats">
+
+<div class="cy-cat"><b>奇幻异世界</b><span>世界观宏大、设定丰富，适合喜欢沉浸式展开的观众。</span><em>进入分区 →</em></div>
+<div class="cy-cat"><b>热血战斗</b><span>节奏紧凑、作画集中，适合连续追看的观众。</span><em>进入分区 →</em></div>
+<div class="cy-cat"><b>日常治愈</b><span>单元剧为主，阅读压力小，碎片时间友好。</span><em>进入分区 →</em></div>
+<div class="cy-cat"><b>悬疑推理</b><span>重逻辑与反转，适合边看边推敲的读者。</span><em>进入分区 →</em></div>
+<div class="cy-cat"><b>校园恋爱</b><span>感情线为核心，慢热型作品较多。</span><em>进入分区 →</em></div>
+<div class="cy-cat"><b>科幻设定</b><span>重视世界观细节，阅读时建议留意旁白。</span><em>进入分区 →</em></div>
+<div class="cy-cat"><b>同人社区</b><span>二创与角色讨论为主，氛围偏轻松。</span><em>进入分区 →</em></div>
+<div class="cy-cat"><b>声优索引</b><span>按声优选番，横向扩展浏览路径。</span><em>进入分区 →</em></div>
+
+</div>
+</div>
+</section>
+
+<!-- 深度解析 -->
+<section class="sec" id="deep">
+<div class="wrap">
+<div class="cy-article">
+<h2>深度解析：91次元浏览器为什么值得作为固定浏览起点</h2>
+
+<p>讨论91次元浏览器，绕不开一个现实问题：二次元内容的入口实在太分散了。番剧在一个站点、漫画在另一个站点、轻小说和同人讨论又各自为政，用户往往要在浏览器里开十几个标签页，才能覆盖自己一天的浏览需求。聚合浏览工具出现的逻辑，正是把这些入口收拢到一个相对统一的框架里，减少“找入口”这个动作本身消耗的注意力。</p>
+
+<h3>从“找内容”到“选路径”的转变</h3>
+<p>传统内容站的逻辑是用户主动搜索，而聚合浏览的思路更接近“路径管理”。91次元浏览器把入口按题材、更新状态、内容形态做了分层，用户打开页面后先看到的是分类而不是搜索结果。这种设计的好处是，即使你还没想好具体要看什么，也能沿着分类一路浏览下去；坏处是，如果分类逻辑不清晰，很容易变成一堆链接的堆砌。因此这类工具的核心竞争力，其实在于分类是否贴合真实使用习惯。</p>
+<div class="quote">判断一个聚合浏览入口好不好用，最简单的标准是：从打开到找到想看的内容，中间需要点几次、想几次。</div>
+
+<h3>题材分类与更新提示的双重价值</h3>
+<p>对追更型用户来说，更新提示的价值往往高于内容本身。91次元浏览器把更新状态作为入口信息的一部分展示，用户不需要逐个点进去确认，就能判断哪些内容值得现在打开。这种“先看状态、再看内容”的浏览顺序，对连载型内容尤其友好，因为连载内容最怕的就是漏更和断档，而漏更带来的体验损失，往往比内容质量波动更明显。</p>
+
+<h3>适合人群与不适合人群</h3>
+<p>从使用场景看，91次元浏览器更适合有固定追更习惯、内容方向比较明确的用户，比如每季固定追几部番、同时在追两三部漫画的读者。这类用户对入口效率敏感，聚合工具能明显减少他们的操作成本。相对而言，如果用户更看重单一平台的社区互动深度，或者习惯在一个站点内完成全部浏览，那么聚合工具带来的增益会小一些，这也是需要客观看待的地方。</p>
+
+<h3>与单一内容平台的差异</h3>
+<p>单一平台的优势是内容与社区一体化，讨论、评分、弹幕都在一个体系内；聚合浏览的优势则是覆盖面更广，可以把不同类型的内容放进同一条浏览动线。两者并不冲突，很多用户的实际做法是：用聚合入口做日常浏览和更新追踪，遇到特别感兴趣的作品再回到具体平台深入参与讨论。理解这个分工，就能更合理地使用91次元浏览器这类工具，而不是期待它解决所有问题。</p>
+
+<h3>搜索这个词的人通常在找什么</h3>
+<p>从搜索意图看，搜索“91次元浏览器”的用户大致分三类：一类是想确认这类工具到底提供什么功能的新用户；一类是已经用过、想找稳定入口的老用户；还有一类是想了解它和普通浏览器、内容平台有什么区别的观望者。本页面的结构就是按这三类意图组织的：先讲清定位，再讲分类和体验，最后用常见问题收尾，让不同意图的读者都能找到对应信息。</p>
+
+<p>总的来说，91次元浏览器这类聚合浏览工具的价值，在于把分散的内容消费动作整理成一条相对顺滑的路径。它不替代内容平台，也不承诺内容质量，但它能让你少开几个标签页、少漏几次更新，这对于长期追更的二次元用户来说，已经是相当实用的改进。</p>
+</div>
+</div>
+</section>
+
+<!-- 体验指南 -->
+<section class="sec" id="guide">
+<div class="wrap">
+<div class="sec-head">
+<h2><span class="bar"></span>浏览体验指南</h2>
+<p>从页面结构、筛选方式到移动端阅读的实用建议</p>
+</div>
+<div class="cy-guide">
+
+<div class="cy-guide-item">
+<div class="num">1</div>
+<h3>先定分类，再定内容</h3>
+<p>打开91次元浏览器后，建议先在分类区确定大方向，再进入具体入口。先选题材再选作品，比直接翻列表更省时间，也更容易形成稳定的浏览习惯。</p>
+</div>
+
+<div class="cy-guide-item">
+<div class="num">2</div>
+<h3>把更新状态当作筛选条件</h3>
+<p>追更型内容优先看更新状态，连载中的作品适合固定时间查看，已完结的作品更适合集中补看。两种节奏分开处理，阅读体验会顺畅很多。</p>
+</div>
+
+<div class="cy-guide-item">
+<div class="num">3</div>
+<h3>移动端注意点击区域</h3>
+<p>手机上浏览时，入口按钮的点击区域和文字大小直接影响体验。建议使用竖屏浏览分类页，阅读正文时再切换横屏，避免误触。</p>
+</div>
+
+<div class="cy-guide-item">
+<div class="num">4</div>
+<h3>善用收藏整理浏览路径</h3>
+<p>把常看的入口加入浏览器收藏夹并分组命名，比每次重新搜索高效得多。按题材分组、按更新频率排序，是很实用的整理思路。</p>
+</div>
+
+<div class="cy-guide-item">
+<div class="num">5</div>
+<h3>相关推荐用来扩展路径</h3>
+<p>看完一部作品后，顺着相关推荐找同类内容，比随机翻列表更容易找到合口味的作品。推荐入口的价值在于扩展，而不是替代主动选择。</p>
+</div>
+
+<div class="cy-guide-item">
+<div class="num">6</div>
+<h3>控制单次浏览时长</h3>
+<p>聚合入口容易让人越点越多，建议给自己设定单次浏览的时长或条目上限。追更是长期行为，节奏比强度更重要。</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+<div class="wrap">
+<div class="sec-head">
+<h2><span class="bar"></span>常见问题解答</h2>
+<p>围绕91次元浏览器的功能定位与使用方式整理</p>
+</div>
+<div class="cy-faq">
+
+<details open>
+<summary>91次元浏览器主要提供什么功能？</summary>
+<div class="ans">它的核心功能是聚合浏览与入口导航，把番剧、漫画、轻小说、同人社区等方向的常见入口按题材和更新状态整理到同一个页面框架里。用户不需要记住多个站点地址，就能通过分类找到对应方向。它本身不生产内容，也不对具体内容的版权与质量做保证，使用时应以各入口实际提供的信息为准。</div>
+</details>
+
+<details>
+<summary>新用户应该按什么顺序开始浏览？</summary>
+<div class="ans">建议先看分类入口，确定自己感兴趣的题材方向，再从该方向下的推荐内容里挑一两部开始。不要一上来就同时开很多部，容易分散注意力。比较稳妥的顺序是：先看一部已完结的短篇建立节奏感，再进入连载内容追更，最后再考虑社区讨论和声优索引这类扩展内容。</div>
+</details>
+
+<details>
+<summary>聚合浏览和直接在内容平台看有什么区别？</summary>
+<div class="ans">直接进内容平台的优势是社区、评分、讨论一体化，体验完整；聚合浏览的优势是入口集中、切换成本低，适合日常更新追踪。很多用户的实际做法是两者结合：用聚合入口做日常浏览和更新提醒，遇到特别感兴趣的作品再回到具体平台深入参与。两种方式并不冲突，按自己的使用习惯选择即可。</div>
+</details>
+
+<details>
+<summary>更新提示不准或者漏更怎么办？</summary>
+<div class="ans">聚合类入口的更新信息通常来自各站点公开信息，存在一定延迟是正常现象。如果发现更新状态和实际不一致，建议以具体站点的更新页面为准，同时把常看的作品加入收藏并固定时间查看。对连载内容来说，建立自己的查看节奏，比完全依赖提示更可靠。</div>
+</details>
+
+<details>
+<summary>移动端浏览需要注意什么？</summary>
+<div class="ans">移动端浏览建议优先使用分类页而不是长列表，减少滚动距离；阅读正文时注意字体大小和行距，竖屏阅读更省力；点击入口时留意按钮的点击区域，避免误触。如果单次浏览时间较长，可以适当调低屏幕亮度，缓解视觉疲劳。</div>
+</details>
+
+<details>
+<summary>页面里的推荐内容可以直接当作评分参考吗？</summary>
+<div class="ans">页面中的热度、评分类信息属于浏览参考，用于帮助判断内容方向和更新状态，不等同于权威评价。不同观众对同一部作品的感受差异很大，建议把推荐当作筛选起点，而不是最终结论。真正决定是否继续追看的，还是自己看前几话后的实际感受。</div>
+</details>
+
+</div>
+</div>
+</section>
+
+<!-- 评论 -->
+<section class="sec" id="comments">
+<div class="wrap">
+<div class="sec-head">
+<h2><span class="bar"></span>用户评论与讨论</h2>
+<p>近期读者留言摘选，观点仅代表用户个人</p>
+</div>
+<div class="cy-comments">
+
+<div class="cy-comment">
+<div class="top"><span class="cy-avatar" style="background:#6a4cff">夜</span><b>夜航星屑</b><span>11-06</span></div>
+<p>用91次元浏览器主要是图一个入口集中，追番追漫不用来回翻收藏夹了，这点确实省事。</p>
+</div>
+
+<div class="cy-comment">
+<div class="top"><span class="cy-avatar" style="background:#ff6fc0">阿</span><b>阿岚不吃香菜</b><span>11-05</span></div>
+<p>分类做得还算清楚，就是希望更新提示能再准一点，有时候我这边看到更了页面还没变。</p>
+</div>
+
+<div class="cy-comment">
+<div class="top"><span class="cy-avatar" style="background:#22c8e0">小</span><b>小满追番中</b><span>11-05</span></div>
+<p>新手真的建议先看分类再挑，我一开始直接乱点，结果一晚上开了十几个入口啥也没看完。</p>
+</div>
+
+<div class="cy-comment">
+<div class="top"><span class="cy-avatar" style="background:#ff8a4c">柚</span><b>柚子汽水</b><span>11-04</span></div>
+<p>日常治愈区是我的快乐老家，短篇单元剧太适合睡前看了，一话几分钟不占时间。</p>
+</div>
+
+<div class="cy-comment">
+<div class="top"><span class="cy-avatar" style="background:#4c8cff">观</span><b>观测者K</b><span>11-03</span></div>
+<p>热血番第12话作画确实可以，不过前面铺垫有点长，差点弃了，坚持下来还是值的。</p>
+</div>
+
+<div class="cy-comment">
+<div class="top"><span class="cy-avatar" style="background:#1f8f7a">清</span><b>清晨六点半</b><span>11-03</span></div>
+<p>科幻设定系那几部阅读门槛偏高，旁白信息量大，跳读会看不懂，建议慢慢看。</p>
+</div>
+
+<div class="cy-comment">
+<div class="top"><span class="cy-avatar" style="background:#c04cff">书</span><b>书页翻动声</b><span>11-02</span></div>
+<p>轻小说书单整理得不错，按系列分卷这点很实用，比单本推荐好找多了。</p>
+</div>
+
+<div class="cy-comment">
+<div class="top"><span class="cy-avatar" style="background:#6a4cff">一</span><b>一只路过的猫</b><span>11-02</span></div>
+<p>整体体验还行，但页面信息密度有点高，第一次打开会有点不知道从哪看起。</p>
+</div>
+
+<div class="cy-comment">
+<div class="top"><span class="cy-avatar" style="background:#ff6fc0">夏</span><b>夏目不还书</b><span>11-01</span></div>
+<p>校园恋爱番中段确实比开头好看，感情线展开之后节奏顺多了，前面差点放弃。</p>
+</div>
+
+<div class="cy-comment">
+<div class="top"><span class="cy-avatar" style="background:#22c8e0">蓝</span><b>蓝白条纹</b><span>10-31</span></div>
+<p>希望同人社区入口能再细分一下，现在点进去还要自己找板块，稍微有点绕。</p>
+</div>
+
+<div class="cy-comment">
+<div class="top"><span class="cy-avatar" style="background:#ff8a4c">麦</span><b>麦田守夜人</b><span>10-30</span></div>
+<p>补番指南对新人友好，按年代分确实好选，我就是顺着这个把老番补起来的。</p>
+</div>
+
+<div class="cy-comment">
+<div class="top"><span class="cy-avatar" style="background:#4c8cff">星</span><b>星尘落进眼</b><span>10-30</span></div>
+<p>声优索引这个思路挺有意思，我确实是按声优选番的那类人，希望条目再多一些。</p>
+</div>
+
+<div class="cy-comment">
+<div class="top"><span class="cy-avatar" style="background:#1f8f7a">慢</span><b>慢半拍先生</b><span>10-29</span></div>
+<p>91次元浏览器当日常起点挺顺手的，不过我还是习惯看完再去原站看讨论，两边结合着用。</p>
+</div>
+
+<div class="cy-comment">
+<div class="top"><span class="cy-avatar" style="background:#c04cff">纸</span><b>纸飞机不飞</b><span>10-28</span></div>
+<p>悬疑推理系列第三卷看完了，伏笔收得还行，就是中间解释部分有点多，稍微拖。</p>
+</div>
+
+<div class="cy-comment">
+<div class="top"><span class="cy-avatar" style="background:#6a4cff">半</span><b>半岛铁盒</b><span>10-27</span></div>
+<p>建议加一个“最近浏览”的记录位置，每次重新翻分类有点麻烦，其他都挺好。</p>
+</div>
+
+<div class="cy-comment">
+<div class="top"><span class="cy-avatar" style="background:#ff6fc0">桃</span><b>桃子味晚风</b><span>10-26</span></div>
+<p>异世界番这次换地图之后节奏快了，前两话铺垫我差点以为是慢热番，现在追得挺起劲。</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- 资讯 -->
+<section class="sec" id="news">
+<div class="wrap">
+<div class="sec-head">
+<h2><span class="bar"></span>相关资讯</h2>
+<p>围绕二次元内容消费与聚合浏览的近期动态</p>
+</div>
+<div class="cy-news">
+
+<article class="cy-news-item">
+<time>2026-11-06</time>
+<h3>本季番剧中期观察：慢热作品口碑回升明显</h3>
+<p>多部前期评价一般的作品在中段展开后讨论度上升，观众对铺垫期的容忍度与题材偏好相关。</p>
+</article>
+
+<article class="cy-news-item">
+<time>2026-11-05</time>
+<h3>漫画分区更新节奏调整，短篇单元更受欢迎</h3>
+<p>日常治愈类作品阅读完成率较高，碎片时间阅读成为主要使用场景之一。</p>
+</article>
+
+<article class="cy-news-item">
+<time>2026-11-03</time>
+<h3>轻小说系列化阅读趋势：按卷追更成为主流</h3>
+<p>读者更倾向先看第一卷再决定是否追完，书单按系列整理的需求随之上升。</p>
+</article>
+
+<article class="cy-news-item">
+<time>2026-11-01</time>
+<h3>聚合浏览工具的使用习惯调查：更新提示最受关注</h3>
+<p>在追更场景中，用户对更新状态的敏感度高于内容评分，减少漏更是核心诉求。</p>
+</article>
+
+<article class="cy-news-item">
+<time>2026-10-29</time>
+<h3>声优索引式选番逐渐流行，横向浏览路径增加</h3>
+<p>按声优选番的用户比例上升，相关条目整理的完整度成为部分用户的选择依据。</p>
+</article>
+
+<article class="cy-news-item">
+<time>2026-10-27</time>
+<h3>同人社区讨论热度提升，规则意识被反复强调</h3>
+<p>二创讨论活跃度上升的同时，社区对内容规范与参与礼仪的提示也更加明确。</p>
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- 订阅 -->
+<section class="sec">
+<div class="wrap">
+<div class="cy-sub">
+<div>
+<h2>订阅91次元浏览器更新提醒</h2>
+<p>本季番剧、漫画分区与轻小说书单的更新动态，整理后推送给你。</p>
+</div>
+<form class="box" onsubmit="return false">
+<input type="email" placeholder="输入邮箱，接收更新整理" aria-label="邮箱订阅">
+<button type="submit">订阅</button>
+</form>
+</div>
+</div>
+</section>
+
+</main>
+
+<!-- 页脚 -->
+<footer class="cy-footer">
+<div class="wrap">
+<div class="cy-footer-grid">
+<div>
+<h4>91次元浏览器</h4>
+<p>面向二次元爱好者的聚合浏览与资源导航说明页，整理番剧、漫画、轻小说与同人社区方向的入口信息，帮助用户建立更顺手的浏览路径。本页仅作功能与导航介绍。</p>
+</div>
+<div>
+<h4>内容栏目</h4>
+<ul>
+<li><a href="/#hot">热门推荐</a></li>
+<li><a href="/#update">最新动态</a></li>
+<li><a href="/#cats">分类入口</a></li>
+<li><a href="/#deep">深度解析</a></li>
+</ul>
+</div>
+<div>
+<h4>使用帮助</h4>
+<ul>
+<li><a href="/#guide">体验指南</a></li>
+<li><a href="/#faq">常见问题</a></li>
+<li><a href="/#comments">用户评论</a></li>
+<li><a href="/#news">相关资讯</a></li>
+</ul>
+</div>
+<div>
+<h4>友情链接</h4>
+<ul>
+<li><a href="/#top">站点首页</a></li>
+<li><a href="/#about">内容简介</a></li>
+<li><a href="/#cats">题材分类</a></li>
+<li><a href="/#update">更新追踪</a></li>
+</ul>
+</div>
+</div>
+<div class="cy-copy">
+<span>© 2026 91次元浏览器内容导航说明页 · 页面信息仅供参考</span>
+<span>免责声明：本页为聚合浏览工具的功能介绍与入口导航说明，不提供内容存储，具体内容以各入口实际提供为准。</span>
+</div>
+</div>
+</footer>
+
+</body>
+                              </html>
