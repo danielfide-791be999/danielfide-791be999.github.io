@@ -1,0 +1,1098 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>秘密官网-秘密角落深度解析_热门秘密推荐与讨论社区</title>
+    <meta name="description" content="秘密官网是聚焦“秘密”主题的内容聚合页，收录热门秘密话题、深度解析、用户真实讨论与最新动态。为你提供秘密类内容推荐、常见问题解答与社区精选评论，适合喜欢探索隐藏故事与私密分享的读者。">
+    <meta name="keywords" content="秘密官网,秘密话题,秘密社区,秘密解析,秘密推荐">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23312e4f'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23e6c9a8' font-family='sans-serif'%3E秘%3C/text%3E%3C/svg%3E">
+    <style>
+        :root {
+            --ink: #1e1b2e;
+            --ink-soft: #3d3a56;
+            --paper: #f9f6f0;
+            --card-bg: #ffffff;
+            --accent: #b65f3a;
+            --accent-soft: #f3e3d8;
+            --gold: #b8935c;
+            --line: #e5dfd5;
+            --shadow: 0 12px 28px -8px rgba(30, 27, 46, 0.08), 0 4px 12px -4px rgba(0, 0, 0, 0.02);
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --radius-sm: 10px;
+            --max-width: 1200px;
+            --font-main: 'Inter', 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--paper);
+            color: var(--ink);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* 导航 */
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--line);
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo-cluster {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-badge {
+            background: var(--ink);
+            color: var(--paper);
+            font-weight: 700;
+            font-size: 24px;
+            padding: 8px 14px 8px 12px;
+            border-radius: 40px 12px 12px 40px;
+            letter-spacing: 2px;
+            line-height: 1;
+            box-shadow: 0 4px 12px rgba(30, 27, 46, 0.15);
+        }
+
+        .logo-text {
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--ink-soft);
+            letter-spacing: -0.3px;
+        }
+
+        .logo-text span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            align-items: center;
+            flex-wrap: wrap;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--ink-soft);
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        .nav-cta {
+            background: var(--ink);
+            color: var(--paper) !important;
+            padding: 8px 18px;
+            border-radius: 30px;
+            border-bottom: none !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--accent);
+            border-bottom: none !important;
+            color: #fff !important;
+        }
+
+        /* 搜索banner */
+        .hero-magazine {
+            background: linear-gradient(135deg, #f4ede4 0%, #faf6f0 100%);
+            border-radius: var(--radius-lg);
+            padding: 48px 42px;
+            margin: 32px 0 40px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(184, 147, 92, 0.15);
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: var(--ink);
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 .accent {
+            color: var(--accent);
+            background: linear-gradient(145deg, #b65f3a, #9d482b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--ink-soft);
+            margin-bottom: 28px;
+            max-width: 520px;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        .search-magazine {
+            display: flex;
+            background: #fff;
+            border-radius: 60px;
+            padding: 5px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--line);
+            max-width: 480px;
+        }
+
+        .search-magazine input {
+            flex: 1;
+            border: none;
+            padding: 14px 20px;
+            font-size: 1rem;
+            border-radius: 60px;
+            outline: none;
+            background: transparent;
+            font-family: var(--font-main);
+            color: var(--ink);
+        }
+
+        .search-magazine button {
+            background: var(--ink);
+            color: #fff;
+            border: none;
+            padding: 0 26px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: 0.2s;
+            white-space: nowrap;
+            letter-spacing: 0.3px;
+        }
+
+        .search-magazine button:hover {
+            background: var(--accent);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 24px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+            color: var(--ink-soft);
+            flex-wrap: wrap;
+        }
+
+        .hero-stats span {
+            font-weight: 700;
+            color: var(--ink);
+            font-size: 1.2rem;
+            margin-right: 4px;
+        }
+
+        .hero-cover {
+            background: linear-gradient(145deg, #d9cfc0, #c2b3a0);
+            border-radius: var(--radius-md);
+            height: 240px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #3f3a2e;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-cover::after {
+            content: "🔒 秘密档案";
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 10px 24px;
+            border-radius: 40px;
+            backdrop-filter: blur(4px);
+            color: #2f2a20;
+        }
+
+        .hero-cover::before {
+            content: "✧ 私密 · 真实 · 深度 ✧";
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: #5e5340;
+            opacity: 0.8;
+        }
+
+        /* 快捷入口 */
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 12px 0 36px;
+        }
+
+        .quick-nav a {
+            background: #fff;
+            padding: 10px 22px;
+            border-radius: 40px;
+            text-decoration: none;
+            color: var(--ink-soft);
+            font-weight: 500;
+            border: 1px solid var(--line);
+            transition: 0.2s;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .quick-nav a:hover {
+            background: var(--ink);
+            color: #fff;
+            border-color: var(--ink);
+            transform: translateY(-2px);
+        }
+
+        /* 通用 section */
+        .section {
+            margin: 56px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 26px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .section-title {
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            color: var(--ink);
+        }
+
+        .section-title::before {
+            content: "◆";
+            color: var(--accent);
+            margin-right: 12px;
+            font-size: 1.4rem;
+        }
+
+        .section-more {
+            text-decoration: none;
+            color: var(--ink-soft);
+            font-weight: 500;
+            font-size: 0.95rem;
+            opacity: 0.8;
+            transition: 0.2s;
+        }
+
+        .section-more:hover {
+            color: var(--accent);
+            opacity: 1;
+        }
+
+        /* 内容简介 */
+        .intro-box {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 32px 38px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--line);
+            font-size: 1.05rem;
+            color: var(--ink-soft);
+            line-height: 1.8;
+        }
+
+        .intro-box strong {
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        /* 卡片网格 - 封面卡片 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 26px;
+        }
+
+        .secret-card {
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 22px 20px 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--line);
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .secret-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 22px 32px -12px rgba(30, 27, 46, 0.15);
+        }
+
+        .card-tag {
+            display: inline-block;
+            background: var(--accent-soft);
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 30px;
+            letter-spacing: 0.3px;
+            align-self: flex-start;
+            margin-bottom: 14px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--ink-soft);
+            margin-bottom: 18px;
+            flex: 1;
+            opacity: 0.85;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #a0998c;
+            border-top: 1px solid var(--line);
+            padding-top: 14px;
+            margin-top: auto;
+        }
+
+        .card-meta .hot {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* 最新更新列表 */
+        .update-list {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 8px 0;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--line);
+            overflow: hidden;
+        }
+
+        .update-item {
+            display: flex;
+            align-items: center;
+            padding: 16px 28px;
+            border-bottom: 1px solid var(--line);
+            font-size: 0.98rem;
+            transition: background 0.15s;
+        }
+
+        .update-item:last-child {
+            border-bottom: none;
+        }
+
+        .update-item:hover {
+            background: #fcf9f5;
+        }
+
+        .update-time {
+            color: #a0998c;
+            font-size: 0.8rem;
+            min-width: 96px;
+            font-weight: 500;
+        }
+
+        .update-name {
+            font-weight: 600;
+            color: var(--ink);
+            min-width: 190px;
+        }
+
+        .update-summary {
+            color: var(--ink-soft);
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-left: 16px;
+        }
+
+        /* 分类入口 */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .category-item {
+            background: #fff;
+            border-radius: var(--radius-sm);
+            padding: 18px 12px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--ink-soft);
+            font-weight: 600;
+            border: 1px solid var(--line);
+            transition: 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .category-item:hover {
+            background: var(--ink);
+            color: #fff;
+            border-color: var(--ink);
+            transform: translateY(-3px);
+        }
+
+        /* 深度解析 */
+        .deep-analysis {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 42px 48px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--line);
+            line-height: 1.8;
+            font-size: 1.02rem;
+            color: var(--ink-soft);
+        }
+
+        .deep-analysis h2 {
+            font-size: 1.8rem;
+            margin-bottom: 24px;
+            color: var(--ink);
+        }
+
+        .deep-analysis p {
+            margin-bottom: 20px;
+        }
+
+        .deep-analysis .highlight {
+            background: #fdf8f3;
+            border-left: 4px solid var(--accent);
+            padding: 16px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+            font-style: normal;
+            color: var(--ink);
+        }
+
+        /* 体验指南 */
+        .guide-flex {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .guide-card {
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 26px 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--line);
+        }
+
+        .guide-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 14px;
+            color: var(--ink);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .guide-card p {
+            color: var(--ink-soft);
+            font-size: 0.92rem;
+            opacity: 0.85;
+        }
+
+        /* FAQ 手风琴 */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-item {
+            background: #fff;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--line);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .faq-question {
+            padding: 20px 26px;
+            font-weight: 600;
+            color: var(--ink);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.02rem;
+            background: #fff;
+            user-select: none;
+        }
+
+        .faq-question::after {
+            content: "▾";
+            font-size: 1.2rem;
+            color: var(--accent);
+            transition: transform 0.2s;
+        }
+
+        .faq-item.open .faq-question::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 26px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.25s ease, padding 0.2s;
+            color: var(--ink-soft);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            background: #fdfbf9;
+            border-top: 1px solid transparent;
+        }
+
+        .faq-item.open .faq-answer {
+            padding: 20px 26px;
+            max-height: 300px;
+            border-top-color: var(--line);
+        }
+
+        /* 评论 */
+        .comment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 18px;
+        }
+
+        .comment-card {
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 20px 22px;
+            border: 1px solid var(--line);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+        }
+
+        .comment-user {
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        .comment-date {
+            color: #b0a99e;
+        }
+
+        .comment-text {
+            color: var(--ink-soft);
+            font-size: 0.92rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* 资讯卡片 */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .news-card {
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 24px;
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+            transition: 0.2s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .news-date {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .news-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 10px;
+        }
+
+        .news-desc {
+            font-size: 0.9rem;
+            color: var(--ink-soft);
+            opacity: 0.8;
+        }
+
+        /* 页脚 */
+        .footer {
+            margin-top: 70px;
+            padding: 40px 0 30px;
+            border-top: 1px solid var(--line);
+            color: #8a8479;
+            font-size: 0.88rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer a {
+            color: #8a8479;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .footer a:hover {
+            color: var(--accent);
+        }
+
+        .footer-left p {
+            margin-bottom: 8px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 900px) {
+            .hero-magazine {
+                grid-template-columns: 1fr;
+                padding: 32px 24px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .guide-flex {
+                grid-template-columns: 1fr;
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .deep-analysis {
+                padding: 28px 22px;
+            }
+
+            .intro-box {
+                padding: 24px 22px;
+            }
+
+            .update-item {
+                flex-wrap: wrap;
+                gap: 6px;
+                padding: 14px 18px;
+            }
+
+            .update-time {
+                min-width: 80px;
+            }
+
+            .update-name {
+                min-width: 140px;
+            }
+
+            .update-summary {
+                margin-left: 0;
+                width: 100%;
+            }
+
+            .nav-links {
+                gap: 14px;
+                font-size: 0.9rem;
+            }
+
+            .logo-badge {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .search-magazine {
+                flex-direction: column;
+                border-radius: 20px;
+                background: transparent;
+                box-shadow: none;
+                gap: 10px;
+            }
+
+            .search-magazine input {
+                background: #fff;
+                border-radius: 30px;
+                border: 1px solid var(--line);
+                padding: 14px 18px;
+                width: 100%;
+            }
+
+            .search-magazine button {
+                padding: 14px 18px;
+                border-radius: 30px;
+                width: 100%;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 导航 -->
+        <nav class="nav-bar">
+            <div class="logo-cluster">
+                <div class="logo-badge">秘</div>
+                <div class="logo-text">秘密官网 <span>· 私享档案</span></div>
+            </div>
+            <div class="nav-links">
+                <a href="/#hot-recommend">热门秘密</a>
+                <a href="/#latest-update">最新动态</a>
+                <a href="/#deep-analysis">深度解析</a>
+                <a href="/#category-entry">分类索引</a>
+                <a href="/#faq-section">常见问题</a>
+                <a href="/#comment-section" class="nav-cta">社区讨论</a>
+            </div>
+        </nav>
+
+        <!-- 首屏 Banner 杂志型 -->
+        <header class="hero-magazine">
+            <div class="hero-content">
+                <h1>秘密官网 <span class="accent">· 隐藏故事集</span></h1>
+                <p class="hero-desc">
+                    一个专门收集、解读“秘密”的内容据点。我们追踪那些不愿公开的往事、未被讲述的真相以及私密分享里的共鸣。从情感秘密到行业幕后，从都市传说到个人档案——每一则秘密都值得被认真对待。
+                </p>
+                <div class="search-magazine">
+                    <input type="text" placeholder="搜索秘密、话题或关键词…" aria-label="搜索秘密">
+                    <button>探索秘密</button>
+                </div>
+                <div class="hero-stats">
+                    <div><span>1,286</span> 条秘密档案</div>
+                    <div><span>342</span> 篇深度解析</div>
+                    <div><span>2.8k</span> 条社区评论</div>
+                </div>
+            </div>
+            <div class="hero-cover"></div>
+        </header>
+
+        <!-- 快捷分类入口 -->
+        <div class="quick-nav">
+            <a href="/#hot-recommend">🔥 热门秘密</a>
+            <a href="/#latest-update">🗓 最新更新</a>
+            <a href="/#deep-analysis">📖 深度解析</a>
+            <a href="/#category-entry">📂 分类索引</a>
+            <a href="/#faq-section">❓ 常见问题</a>
+            <a href="/#comment-section">💬 用户评论</a>
+            <a href="/#news-section">📰 秘密资讯</a>
+            <a href="/#guide-section">🧭 体验指南</a>
+            <a href="/#intro-section">📌 关于秘密</a>
+        </div>
+
+        <!-- 内容简介 -->
+        <section id="intro-section" class="section">
+            <div class="section-header">
+                <h2 class="section-title">关于秘密官网 · 我们收集什么</h2>
+            </div>
+            <div class="intro-box">
+                <p><strong>秘密官网</strong> 是一个围绕“秘密”主题的内容聚合与讨论空间。这里不制造秘密，只呈现那些值得被看见的隐藏叙事。无论你是在寻找情感树洞、行业秘辛、生活冷知识，还是对人性深处的微妙好奇，这个页面都能给你提供索引。我们聚合了来自社区的真实分享、编辑团队的深度解读以及热门秘密话题的追踪。</p>
+                <p>适合喜欢听故事、研究人性、探索未知的读者。页面提供分类清晰的秘密档案卡片、最新更新动态、常见问题解答以及大量用户评论——你可以把这里当作一个秘密主题的导航站，也可以把它当成睡前阅读的私藏书架。所有内容均以静态形式沉淀，方便收藏与反复翻阅。如果你也相信“秘密是另一种真实”，这里值得你常来。</p>
+            </div>
+        </section>
+
+        <!-- 热门推荐 -->
+        <section id="hot-recommend" class="section">
+            <div class="section-header">
+                <h2 class="section-title">热门秘密 · 本周高关注</h2>
+                <a href="/#hot-recommend" class="section-more">查看全部 →</a>
+            </div>
+            <div class="card-grid">
+                <article class="secret-card">
+                    <span class="card-tag">情感秘密</span>
+                    <h3 class="card-title">凌晨三点的匿名信</h3>
+                    <p class="card-desc">一个持续更新了七年的匿名信箱，收集了上千封未曾寄出的告白与告别。最新一期讲述了一段跨越十年的暗恋。</p>
+                    <div class="card-meta"><span class="hot">🔥 9.2k 阅读</span><span>更新于 11月6日</span></div>
+                </article>
+                <article class="secret-card">
+                    <span class="card-tag">行业秘辛</span>
+                    <h3 class="card-title">古董商不会说的十件事</h3>
+                    <p class="card-desc">从拍卖行到地摊，那些关于鉴定、来源和议价的潜规则。一位匿名从业者口述，编辑整理成可读性极强的生存指南。</p>
+                    <div class="card-meta"><span class="hot">🔥 8.7k 阅读</span><span>更新于 11月5日</span></div>
+                </article>
+                <article class="secret-card">
+                    <span class="card-tag">都市传说</span>
+                    <h3 class="card-title">消失的十三号站台</h3>
+                    <p class="card-desc">本地论坛二十年经久不衰的都市谜题，我们整理了所有公开线索、目击者描述与地图比对，试图还原那个被抹去的站台。</p>
+                    <div class="card-meta"><span class="hot">🔥 12.4k 阅读</span><span>更新于 11月4日</span></div>
+                </article>
+                <article class="secret-card">
+                    <span class="card-tag">生活冷知识</span>
+                    <h3 class="card-title">超市货架背后的心理学</h3>
+                    <p class="card-desc">为什么牛奶总在最后面？为什么糖果摆在收银台？一篇关于零售空间秘密的深度短文，帮你重新认识日常购物。</p>
+                    <div class="card-meta"><span class="hot">🔥 6.1k 阅读</span><span>更新于 11月3日</span></div>
+                </article>
+                <article class="secret-card">
+                    <span class="card-tag">人物档案</span>
+                    <h3 class="card-title">代号“夜莺”的档案</h3>
+                    <p class="card-desc">一位从未公开露面的独立调查员，留下了数百页手记。我们节选了其中关于城市噪音与孤独感的章节。</p>
+                    <div class="card-meta"><span class="hot">🔥 5.9k 阅读</span><span>更新于 11月2日</span></div>
+                </article>
+                <article class="secret-card">
+                    <span class="card-tag">自然秘境</span>
+                    <h3 class="card-title">深山气象站的最后一任观测员</h3>
+                    <p class="card-desc">在海拔两千米的无人区，一位观测员独自记录了三十年的云和雨。他留下的数据背后藏着一份未公开的名单。</p>
+                    <div class="card-meta"><span class="hot">🔥 7.3k 阅读</span><span>更新于 11月1日</span></div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 最新更新 -->
+        <section id="latest-update" class="section">
+            <div class="section-header">
+                <h2 class="section-title">最新秘密动态 · 持续追踪</h2>
+                <a href="/#latest-update" class="section-more">刷新列表 →</a>
+            </div>
+            <div class="update-list">
+                <div class="update-item"><span class="update-time">11月7日 09:20</span><span class="update-name">《匿名信》第七季</span><span class="update-summary">第8封：关于错过的末班车与未说出口的话。</span></div>
+                <div class="update-item"><span class="update-time">11月7日 08:10</span><span class="update-name">古董商口述</span><span class="update-summary">新增“修复与做旧”章节，附从业者避坑清单。</span></div>
+                <div class="update-item"><span class="update-time">11月6日 22:45</span><span class="update-name">十三号站台档案</span><span class="update-summary">收到一位退休调度员提供的内部线路图手稿。</span></div>
+                <div class="update-item"><span class="update-time">11月6日 19:30</span><span class="update-name">夜莺手记</span><span class="update-summary">更新“城市回声”篇，关于地铁通风口的低鸣。</span></div>
+                <div class="update-item"><span class="update-time">11月6日 15:12</span><span class="update-name">超市心理学</span><span class="update-summary">补充“生鲜区灯光密码”和“动线设计”解读。</span></div>
+                <div class="update-item"><span class="update-time">11月6日 11:05</span><span class="update-name">深山气象站</span><span class="update-summary">公布1987-1992年降水量原始记录扫描件。</span></div>
+                <div class="update-item"><span class="update-time">11月5日 20:40</span><span class="update-name">秘密官网 · 社区精选</span><span class="update-summary">本周新增用户投稿47条，涉及旅行秘密与家族往事。</span></div>
+                <div class="update-item"><span class="update-time">11月5日 14:22</span><span class="update-name">都市传说专题</span><span class="update-summary">新增“消失的喷泉”和“午夜电台”两个条目。</span></div>
+                <div class="update-item"><span class="update-time">11月4日 17:18</span><span class="update-name">人物档案</span><span class="update-summary">新增“档案管理员”篇，讲述一位整理秘密的人。</span></div>
+                <div class="update-item"><span class="update-time">11月4日 10:00</span><span class="update-name">秘密官网 · 编辑手记</span><span class="update-summary">关于如何判断一个秘密是否值得被记录。</span></div>
+            </div>
+        </section>
+
+        <!-- 分类入口 -->
+        <section id="category-entry" class="section">
+            <div class="section-header">
+                <h2 class="section-title">秘密分类索引</h2>
+            </div>
+            <div class="category-grid">
+                <a href="/#hot-recommend" class="category-item">情感秘密</a>
+                <a href="/#hot-recommend" class="category-item">行业秘辛</a>
+                <a href="/#hot-recommend" class="category-item">都市传说</a>
+                <a href="/#hot-recommend" class="category-item">人物档案</a>
+                <a href="/#hot-recommend" class="category-item">生活冷知识</a>
+                <a href="/#hot-recommend" class="category-item">自然秘境</a>
+                <a href="/#hot-recommend" class="category-item">家族往事</a>
+                <a href="/#hot-recommend" class="category-item">网络匿名</a>
+            </div>
+        </section>
+
+        <!-- 深度解析正文 -->
+        <section id="deep-analysis" class="section">
+            <div class="deep-analysis">
+                <h2>“秘密”为什么吸引我们？—— 从好奇到共情的深度解析</h2>
+                <p>秘密官网所承载的核心内容，并不是为了满足窥私欲，而是试图探索“秘密”作为一种人类经验的存在方式。在搜索“秘密”这个关键词时，人们往往带着不同的期待：有的人想找情感树洞，有的人在寻找行业真相，也有人只是单纯被未知的故事吸引。这个页面正是围绕这些需求，将分散的秘密叙事聚合为可浏览、可检索、可讨论的专题集合。</p>
+                <p>从内容类型上看，秘密官网涵盖了情感秘密、行业秘辛、都市传说、人物档案、生活冷知识等多个维度。情感秘密往往以匿名信件或口述形式呈现，带有强烈的私密感和共鸣性；行业秘辛则偏向信息增量，适合对特定领域好奇的读者；都市传说和自然秘境则提供一种探索未知的乐趣。这些分类并非随意划分，而是基于用户搜索行为和社区互动数据逐步沉淀下来的。</p>
+                <div class="highlight">“秘密”类内容的吸引力，在于它同时满足了信息缺口和情感连接。一篇好的秘密叙事，往往在开头制造悬念，在中间提供细节，在结尾留下余味——这也是我们筛选和编辑内容的标准。</div>
+                <p>在人物与角色分析层面，秘密官网非常关注“讲述者”本身。无论是匿名投稿人、被记录的对象，还是社区里持续追更的读者，每个人都在用自己的方式参与秘密的构建。比如“夜莺手记”系列，读者追的不仅是内容，更是那个从未露面的调查员的人格魅力。这种人物弧光让秘密内容超越了单纯的信息，变成了有温度的连载。</p>
+                <p>从节奏与消费体验来说，秘密内容适合碎片化阅读，但也需要深度模块来支撑长尾搜索。因此页面中既有快速浏览的卡片和更新列表，也有长篇的深度解析和FAQ。我们建议新读者先从热门推荐和最新动态入手，找到兴趣点后再进入分类索引或深度解析，最后到评论区看看别人的看法——这条浏览路径符合大多数内容消费者的习惯。</p>
+                <p>同类内容比较方面，秘密官网区别于一般的猎奇网站，更强调内容的可读性和真实性。我们不追求耸人听闻，而是筛选那些有细节、有情绪、有思考价值的秘密。适合人群包括：喜欢非虚构故事的读者、对人性与社会观察感兴趣的人、需要创作灵感的写作者，以及单纯想找个地方安静看故事的夜猫子。</p>
+            </div>
+        </section>
+
+        <!-- 体验指南 -->
+        <section id="guide-section" class="section">
+            <div class="section-header">
+                <h2 class="section-title">体验指南 · 如何逛秘密官网</h2>
+            </div>
+            <div class="guide-flex">
+                <div class="guide-card">
+                    <h3>🧭 从导航入手</h3>
+                    <p>顶部导航固定了热门秘密、最新动态、深度解析、分类索引、常见问题和社区讨论六个入口。点击即可快速跳转到对应板块，适合目标明确的读者。</p>
+                </div>
+                <div class="guide-card">
+                    <h3>📱 移动端友好</h3>
+                    <p>页面针对手机阅读做了适配，卡片和列表会自动调整。无论是在通勤路上还是睡前，都可以流畅地阅读秘密内容并参与评论。</p>
+                </div>
+                <div class="guide-card">
+                    <h3>🔍 搜索与收藏</h3>
+                    <p>首屏搜索框支持关键词检索，建议尝试“匿名”“都市传说”“行业”等词。喜欢的页面可以直接收藏，静态结构加载迅速，方便反复访问。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq-section" class="section">
+            <div class="section-header">
+                <h2 class="section-title">常见问题 · 关于秘密官网</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">秘密官网主要收录哪些类型的内容？</div>
+                    <div class="faq-answer">秘密官网聚焦“秘密”主题，目前涵盖情感秘密、行业秘辛、都市传说、人物档案、生活冷知识、自然秘境、家族往事和网络匿名等方向。内容形式包括匿名投稿、编辑整理、口述记录和深度解析，适合对隐藏故事和人性观察感兴趣的读者。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何快速找到自己感兴趣的秘密话题？</div>
+                    <div class="faq-answer">建议先浏览首屏的热门推荐和最新动态，了解当前社区关注的话题。如果目标明确，可以直接使用搜索框输入关键词，或通过分类索引进入对应板块。每张卡片都带有标签和简短描述，方便快速筛选。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">这些秘密内容是真实的吗？</div>
+                    <div class="faq-answer">秘密官网的内容来源于用户投稿、公开资料整理和编辑约稿。我们不保证每一条都经过严格事实核查，但会尽量标注来源和性质。对于明显虚构或未经证实的内容，编辑会以“都市传说”或“故事”标签加以区分，读者可自行判断。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">可以在秘密官网上分享自己的秘密吗？</div>
+                    <div class="faq-answer">可以。社区讨论区支持用户投稿和评论，但请注意不要发布违法、侵权或伤害他人的内容。我们鼓励真实、善意、有信息增量的分享。投稿入口在评论区上方，提交后编辑会进行筛选和编辑。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">秘密官网的内容多久更新一次？</div>
+                    <div class="faq-answer">热门推荐和最新动态通常每天或隔天更新，深度解析和专题文章每周更新2-3次。社区评论实时刷新。如果有关注的系列，可以定期查看最新动态列表，我们会标注更新时间。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">有没有类似秘密官网的推荐？</div>
+                    <div class="faq-answer">如果你喜欢秘密官网，也可以关注一些非虚构写作平台、匿名故事社区和都市传说档案站。不过秘密官网的特色在于“秘密”主题的垂直聚合，以及编辑对内容可读性的把控。建议先在本站深度浏览，再根据兴趣拓展。</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 用户评论 -->
+        <section id="comment-section" class="section">
+            <div class="section-header">
+                <h2 class="section-title">社区短评 · 他们正在讨论</h2>
+            </div>
+            <div class="comment-grid">
+                <div class="comment-card"><div class="comment-header"><span class="comment-user">@夜行船</span><span class="comment-date">11月6日</span></div><div class="comment-text">匿名信系列追了三年，每一封都像深夜电台。最新那篇关于末班车的，看完愣了好久。</div></div>
+                <div class="comment-card"><div class="comment-header"><span class="comment-user">@灰调咖啡</span><span class="comment-date">11月6日</span></div><div class="comment-text">古董商那篇信息量很大，但也感觉有些地方说得比较保守，希望后续能再深入一点。</div></div>
+                <div class="comment-card"><div class="comment-header"><span class="comment-user">@纸飞机不飞</span><span class="comment-date">11月5日</span></div><div class="comment-text">十三号站台的线索整理太用心了，虽然还是没结论，但这种抽丝剥茧的过程本身就很迷人。</div></div>
+                <div class="comment-card"><div class="comment-header"><span class="comment-user">@山间观测员</span><span class="comment-date">11月5日</span></div><div class="comment-text">气象站那篇让我想起自己小时候在乡下看云的夏天，原来真的有人会把这种事记录一辈子。</div></div>
+                <div class="comment-card"><div class="comment-header"><span class="comment-user">@不具名用户</span><span class="comment-date">11月4日</span></div><div class="comment-text">页面设计挺舒服的，就是有些卡片更新频率太高，感觉内容有点碎。希望多来点长文。</div></div>
+                <div class="comment-card"><div class="comment-header"><span class="comment-user">@南方有雨</span><span class="comment-date">11月4日</span></div><div class="comment-text">超市心理学那篇看完立刻去观察了附近超市的动线，还真是那么回事，生活里到处都是秘密。</div></div>
+                <div class="comment-card"><div class="comment-header"><span class="comment-user">@档案袋</span><span class="comment-date">11月3日</span></div><div class="comment-text">夜莺手记的文笔很好，有一种冷冽的观察感。希望编辑能多挖一些这类人物档案。</div></div>
+                <div class="comment-card"><div class="comment-header"><span class="comment-user">@晚风信箱</span><span class="comment-date">11月3日</span></div><div class="comment-text">在这里投稿了自己的秘密，没想到真的被选中了，还收到了好多温暖的评论，谢谢这个角落。</div></div>
+                <div class="comment-card"><div class="comment-header"><span class="comment-user">@旧书摊主</span><span class="comment-date">11月2日</span></div><div class="comment-text">分类索引很清楚，找家族往事类的内容很方便。不过有些分类点进去内容还不多，加油填充。</div></div>
+                <div class="comment-card"><div class="comment-header"><span class="comment-user">@雾中列车</span><span class="comment-date">11月2日</span></div><div class="comment-text">都市传说部分有点少，希望多更新一些本地怪谈，那种半真半假的感觉最上头。</div></div>
+                <div class="comment-card"><div class="comment-header"><span class="comment-user">@薄荷糖</span><span class="comment-date">11月1日</span></div><div class="comment-text">整体内容质量不错，但有些文章结尾有点仓促，感觉可以再多写几百字。编辑辛苦了。</div></div>
+                <div class="comment-card"><div class="comment-header"><span class="comment-user">@匿名观察</span><span class="comment-date">10月31日</span></div><div class="comment-text">第一次来，是从搜索“秘密”找到的。页面内容比想象中丰富，已经加入书签。</div></div>
+                <div class="comment-card"><div class="comment-header"><span class="comment-user">@深夜书店</span><span class="comment-date">10月30日</span></div><div class="comment-text">希望增加一个“秘密地图”之类的互动功能，把都市传说和地理位置结合起来会更酷。</div></div>
+                <div class="comment-card"><div class="comment-header"><span class="comment-user">@回声走廊</span><span class="comment-date">10月29日</span></div><div class="comment-text">评论区氛围挺好的，没有太多戾气。大家都在认真讨论内容，这点很难得。</div></div>
+            </div>
+        </section>
+
+        <!-- 相关资讯 -->
+        <section id="news-section" class="section">
+            <div class="section-header">
+                <h2 class="section-title">秘密资讯 · 近期动态</h2>
+            </div>
+            <div class="news-grid">
+                <div class="news-card"><div class="news-date">2026年11月7日</div><h3 class="news-title">“匿名信”系列宣布加更，冬季篇即将上线</h3><p class="news-desc">编辑团队透露，最新一季将聚焦“未寄出的家庭信件”，预计收录二十封全新投稿，并附手写扫描件。</p></div>
+                <div class="news-card"><div class="news-date">2026年11月6日</div><h3 class="news-title">十三号站台档案收到关键线索，编辑正在核实</h3><p class="news-desc">一位退休调度员提供了1980年代的手绘线路图，与现有公开资料存在多处吻合，专题文章将择日更新。</p></div>
+                <div class="news-card"><div class="news-date">2026年11月5日</div><h3 class="news-title">秘密官网社区投稿量突破500条，情感类占比最高</h3><p class="news-desc">根据后台统计，近期投稿中情感秘密和家族往事最受关注，编辑精选专题已同步上线首页。</p></div>
+                <div class="news-card"><div class="news-date">2026年11月4日</div><h3 class="news-title">“夜莺手记”将推出音频版，由独立播客制作</h3><p class="news-desc">音频版计划每月更新两期，首期内容为“城市回声”篇，预计11月中旬上线各大播客平台。</p></div>
+                <div class="news-card"><div class="news-date">2026年11月2日</div><h3 class="news-title">深度解析栏目新增“秘密与记忆”专题</h3><p class="news-desc">该专题将从心理学和叙事学角度分析秘密如何塑造个人记忆，首篇文章已发布，欢迎讨论。</p></div>
+                <div class="news-card"><div class="news-date">2026年10月30日</div><h3 class="news-title">秘密官网移动端阅读体验优化完成</h3><p class="news-desc">本次更新调整了卡片间距、字体大小和导航栏折叠逻辑，手机用户阅读和评论更加流畅。</p></div>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <div class="footer-left">
+                <p>© 2026 秘密官网 · 保留所有权利</p>
+                <p>免责声明：本站内容来源于用户投稿与公开资料整理，不代表本平台立场。如有雷同或侵权，请联系处理。</p>
+            </div>
+            <div class="footer-right">
+                <a href="/#intro-section">关于我们</a>
+                <a href="/#faq-section">常见问题</a>
+                <a href="/#comment-section">社区规则</a>
+                <a href="/#news-section">资讯动态</a>
+                <a href="/#category-entry">友情链接占位</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // FAQ 手风琴交互
+        (function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', function(e) {
+                    const isOpen = item.classList.contains('open');
+                    // 关闭其他（可选，这里保留独立展开，更符合阅读习惯）
+                    // 若想同时只开一个，放开下面注释即可
+                    // faqItems.forEach(i => i.classList.remove('open'));
+                    if (!isOpen) {
+                        item.classList.add('open');
+                    } else {
+                        item.classList.remove('open');
+                    }
+                });
+            });
+        })();
+    </script>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+                  </html>
